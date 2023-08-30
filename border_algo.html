@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Adam Warren Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="right-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header">
+
+					<!-- Logo -->
+						<h1><a href="index.html">NatCat Analyst</a></h1>
+
+					<!-- Nav -->
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li class="current"><a href="portfolio_homepage.html">My Portfolio</a></li>
+							<li><a href="career_resources.html">Industry Resources</a>
+							<li><a href="technical_homepage.html">Technical Resources</a></li>
+							
+						</ul>
+					</nav>
+
+				</section>
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div class="row">
+							<div class="col-8 col-12-medium">
+
+								<!-- Content -->
+									<article class="box post">
+										<header>
+											<h2>Shortest World Border Algorithm</h2>
+											<p>An algorithm that finds the shortest shared border between two countries</p>
+										</header>
+										
+										<section>
+											<header>
+											<h3>Discussion</h3>
+										</header>
+											<p>
+												Fundamentally, the algorithm relies upon an optimisation of a spatial index to improve its 
+												efficiency. Primarily, this occurs given each polygon’s bounding box within the ‘world’ 
+												GeoDataFrame can be looped through to test for any intersections with neighbouring 
+												bounding boxes. Using a spatial index here improves efficiency given the computational 
+												ease of comparing rectangles, rather than complex polygons, making the analysis quicker 
+												and less expensive. These polygons can then be stored in the ‘possible_matches’, to which 
+												the slower, more expensive, analysis occurs, where the actual polygon geometries are 
+												checked for intersections (stored in precise_matches). Meaning, the efficiency of the code 
+												has been improved, given the computationally costly analysis only occurs for a select few 
+												countries that have the possibility of sharing a border, rather than for every polygon in the 
+												GeoDataFrame. Following this, the algorithm also restricts any costly calculations of the 
+												border length, to only those that share a border, given the currently polygon in the first loop, 
+												is compared only with countries that intersect with it (held within ‘precise_matches’). 
+
+											</p>
+											<p>
+												Importantly, however, as the same GeoDataFrame is looped through twice, countries that 
+												share a border would be analysed twice, with the same country pair occurring the opposite 
+												way round; once as the bordering country to country_a, and a second time as country_a, 
+												which border the country which was formerly country_a, earlier in the loop. Given this, the 
+												conditional statement ‘id_2 > id_1’ inputted provides a computational order to the loop, using 
+												the ‘id’ of the polygons, to therefore half the number of calculations made by ensuring there 
+												were no duplicate border calculations made. Whilst a dictionary could have been used to 
+												store polygon pairs that share a border, and the dictionary then looped through to find the 
+												shortest border length, this is considered less efficient. This is as extra computational power, 
+												and hence time, would be taken up in constructing the dictionary, and populating it, where as 
+												the code used utilises the pre-existing ‘id’ characteristic, to achieve the same goal. 
+											</p>
+											<p>
+												Also important to note, is that for this assessment an international border was defined as “a 
+												shared boundary between two countries that can be crossed from one country to another”. As 
+												such, the algorithm needed to exclude ‘Points’ at which two countries intersect, hence 
+												considering ‘MultiLineString’ and ‘LineString’ borders. This is as, within the programming and 
+												GIS sphere, a point is considered as infinitely precise and small, meaning within this context, 
+												the points have no geometry, and therefore, neither can they be crossed. As such, where 
+												countries may be considered to share a border in other contexts, for this project they were 
+												excluded from analysis. It too, is important here to note that these ‘borders’, are defined by 
+												the polygons held within the GeoDataFrame, and as such the polygon complexity and 
+												accuracy is inherently entangled in the data held within the GeoDataFrame, that informs 
+												polygon characteristics, and therefore where (and if) the polygons intersect, and their degree 
+												of intersection. This broadens the discussion to include more widely the struggles associated 
+												with mapping the real world within python, and also the problems it encounters with borders 
+												as superimposed geo-political constructs, rather than identifiable and uniformly defined 
+												phenomena. 
+											</p>
+											<p>
+												This project represented the earth using the WGS84 global model; a model commonly taken 
+												as standard for work at the global scale, which enables the relatively accurate measuring of 
+												the distances of borders using geodesic computations. Following this, the Eckert IV projection 
+												was used, that is also commonly used as a reliable and relatively accurate projection, as can 
+												be shown by the distortion calculations for this project: 
+											</p><br>
+											
+												     <ul><ul><ul>Distance distortion (Ep): 0.008363 <br>
+												     Shape distortion (Es): 0.019536 <br>
+												     Area distortion (Ea): 0.000297 <br>
+												     Scale factor (Ka): 1.000594</ul></ul></ul>
+											
+											<p>
+												In this sense, the map can be seen to be both orthopanic, through the area and scale 
+												preservation which produces the countries (polygons) as they would expect to be seen, in 
+												terms of shape and size. Equally, the calculations for border length can be deemed very 
+												reliable, given such low distance distortion figures. This could have been improved further by 
+												using a more localised map projection yet using such a map projection would mean the 
+												algorithm didn’t work autonomously, given the result countries and border would need to be 
+												pre-emptively known, or require user-input. 
+											</p>
+											<p>
+												However, as with any map creation, this project was limited by the data inputted. Primarily, as 
+												would be expected with such a large data set, the data has a low resolution and as such is 
+												greatly generalised. Meaning, with lower polygon complexity and detail, the border lengths 
+												and results are all relative to the level of detail and complexity within the GeoDataFrame. 
+												Equally, this too recognises that the results are true only for this GeoDataFrame, and with 
+												other inputs, could produce different results. Indeed, the solution itself presented a further 
+												problem, in that with the spatial reach of the two countries that form the final border being so 
+												different, producing a map output that provided context for the larger country, whilst still 
+												making the border visible and centred wasn’t feasible. Meaning, the final map output, whilst it 
+												details the countries in the legend, there is little visually, for the map interpreter to have a clear 
+												understanding of where country_a and country_b truly are in relation to one another. 
+
+											</p>
+											
+										</section>
+										<section>
+											<header>
+												<h3>Pseudo Code</h3>
+											</header>
+											<img src="images/portfolio pages/pseudocode/Screenshot 2023-08-27 155301.png" style="max-width: 100%"/>
+											
+											<header>
+												<h3>Code Walkthrough</h3>
+											</header>
+											<p>
+											<img src="images/Code/4/Screenshot 2023-08-26 201450.png" style="max-width: 100%"/>
+											<img src="images/Code/4/Screenshot 2023-08-26 201502.png" style="max-width: 100%"/>
+											<img src="images/Code/4/Screenshot 2023-08-26 201517.png" style="max-width: 100%"/>
+											
+											</p>
+										
+										</section>
+									</article>
+
+							</div>
+							<div class="col-4 col-12-medium">
+
+								<!-- Sidebar -->
+								<section class="box">
+									<a href="neighbour.html" class="image featured"><img src="images/neighbour_analysis.png" alt="" /></a>
+									<header>
+										<h3>Nearest Neighbour Analysis
+										</h3>
+									</header>
+									<p>A geospatial analysis of the accessibliity to Boreholes in the Ugulu District of Uganda
+
+									</p>
+									<footer>
+										<a href="neighbour.html" class="button alt">Next Project</a>
+									</footer>
+								</section>
+									<section class="box">
+										<a href="leeds_crime.html" class="image featured"><img src="images/heatmap.png" alt="" /></a>
+										<header>
+											<h3>Crime in Leeds Heatmap
+											</h3>
+										</header>
+										<p>An analysis of crime hotspots around Leeds city centre</p>
+										<footer>
+											<a href="leeds_crime.html" class="button alt">Next Project</a>
+										</footer>
+									</section>
+									
+									<section class="box">
+										<header>
+											<h3>See Other Projects:</h3>
+										</header>
+										<ul class="divided">
+											<li><a href="dc_construction.html">DC Construction Analysis</a> </li>
+											<li><a href="train_route.html">Shortest Train Route Analysis</a> </li>
+											<li><a href="viewshed_analysis.html">Helvellyn Viewshed Analysis</a> </li>
+											
+											<li><a href="flood_model.html">Helvellyn Flood Model</a></li>
+											<li><a href="coastline_simp.html">Coastline Simplification</a></li>
+											<li><a href="data_redist.html">Geocoded Data Redistribution</a></li>	
+											<li><a href="bogota_analysis.html">Bogota District Analysis</a></li>
+											<li><a href="agent_model.html">Agent Based Modelling</a></li>
+											<li><a href="student_habits.html">Manchester Student Habits Analysis</a></li>										
+										</ul>
+									</section>
+									
+									<section class="box">
+										
+										<header>
+											<h3>Github</h3>
+										</header>
+										<p>View all of my code for all projects on my github!</p>
+										<footer>
+											<a href="https://github.com/warrena01" class="button alt">Click Here</a>
+										</footer>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+			<section id="footer">
+				<div class="container">
+					<div class="row">
+				
+						<div class="col-4 col-6-medium col-12-small">
+							<section>
+								<header>
+									<h2>Go To</h2>
+								</header>
+								<ul class="divided">
+									<li><a href="#">Back to the Top</a></li>
+									<li><a href="portfolio_homepage.html">My Portfolio</a></li>
+									
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<section>
+								<header>
+									<h2>Useful Resources</h2>
+								</header>
+								<ul class="divided">
+									<li><a href="https://www.ajg.com/gallagherre/analytics/catastrophe-analytics/">Gallagher Catastrophe Analytics</a></li>
+									<li><a href="https://www.gdacs.org/default.aspx">What's Happening Now?</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section>
+								<header>
+									<h2>Connect With Me!</h2>
+								</header>
+								<ul class="social">
+									<li><a class="icon brands fa-linkedin-in" href="https://www.linkedin.com/in/adam-warren-699397194/"><span class="label">LinkedIn</span></a></li>
+									<li><a class="icon brands fa-facebook-f" href="https://www.linkedin.com/in/adam-warren-699397194/"><span class="label">Facebook</span></a></li>
+									<li><a class="icon brands fa-instagram" href="https://www.instagram.com/adam_w4rren/"><span class="label">Facebook</span></a></li>
+								</ul>
+								
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

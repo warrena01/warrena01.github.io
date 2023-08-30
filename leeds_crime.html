@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Adam Warren Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="right-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header">
+
+					<!-- Logo -->
+						<h1><a href="index.html">NatCat Analyst</a></h1>
+
+					<!-- Nav -->
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li class="current"><a href="portfolio_homepage.html">My Portfolio</a></li>
+							<li><a href="career_resources.html">Industry Resources</a>
+							<li><a href="technical_homepage.html">Technical Resources</a></li>
+							
+						</ul>
+					</nav>
+
+				</section>
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div class="row">
+							<div class="col-8 col-12-medium">
+
+								<!-- Content -->
+									<article class="box post">
+										<header>
+											<h2>Heatmap Analysis of Crime in Leeds</h2>
+											<p>An analysis of crime hotspots for antisocial behaviour, sexual assault and violence around Leeds city centre</p>
+										</header>
+										
+										<img src="images/portfolio pages/Screenshot 2023-08-27 141549.png" style="max-width: 100%"/>
+										
+										</p>
+										<section>
+											<header>
+												<h3>Discussion</h3>
+											</header>
+											<p>
+												This density heatmap map shows hotspots for sexual assault, violence and antisocial behaviour 
+												around Leeds city centre in October 2019 using publically available data from West Yorkshire Police. 
+												The maps premise is to highlight inclusive spaces, and thus the aforementioned crime data was 
+												chosen as I believe these crimes most hinder a space being safe and thus inclusive, and a heatmap 
+												comparing these crimes allows me to fulfil this maps purpose. The map shows the city centre to be 
+												the least inclusive space with inclusivity improving towards the periphery
+											</p>
+											<p>
+												Whilst point data was used as an origin for my final map, it wasn’t used as the cartographic approach 
+												due to the data not being precise - creating a misleading effect. Choropleths remove this effect, but 
+												the reliance on LSAO (Lower Super Output Area) boundaries misrepresent the data. In addition, 
+												these boundaries are often politically contested, meaning the redrawing of boundaries could have 
+												changed my results at any time. This is due to the LSAO boundaries being arbitrarily created from 
+												census data sets (which don’t have a crime focus, hence removing suitability to this map), and as a 
+												result of this it gives the impression of instantaneous crime level change across LSAO boundaries and 
+												uniformity in crimes across an LSAO. These visual impressions are still consistent in thiessen 
+												polygons too, despite boundaries being constructed from the data. Therefore, heatmaps proved 
+												most suitable as they removed the imprecision of point data and without a reliance on inputted 
+												boundaries, the heatmap can show change both within, and between areas, without sharp changes 
+												across a boundary
+											</p>
+											<p>
+												In the production of my map I chose a ‘plasma’ colour scheme, within a singleband pseudo colour 
+												render, to best emphasise the changing density of crimes, whilst also lowering the opacity of the 
+												layer to allow the raster layer to provide locational context to the data. A smaller map and legend 
+												was used to allow for inner city Leeds and the wider Yorkshire area to be compared and 
+												contextualised. The map relied upon the raster calculator tool, which allowed me to compare two 
+												density surfaces (produced using Kernel density tool), to identify areas within which both crimes 
+												occurred. With recognition of maps as ‘truths’, I created the original heatmaps map with a radii 
+												parameter of 200m, to limit creating a map as a ‘proposition’; thus allowing the raster calculator to 
+												make a map as a ‘truth’ when combining the two layers (Crang, 2014; Crampton, 2014). Further, the 
+												transparency of the heatmap output for no crime was 100% to ensure the raster calculator output 
+												only highlighted appropriate locations. However, whilst I believe my inputs created an accurate 
+												representation of the data, it is possible I inadvertently created a misleading map. 
+											</p>
+											<p>
+												This map has proven useful in highlighting inclusive and exclusive spaces and could aid further study 
+												into motivations or casual factors for exclusivity in these areas. However, whilst police data is the 
+												best source, with research suggesting 63% of sexual assault cases not being reported, the map is 
+												limited by the data (Engel, 2018)
+											</p>
+											<p>
+												References:
+											</p>
+											<p>
+												Engel, B. (2018) ‘Stop Shaming Victims of Sexual Assault for Not Reporting’ in Psychology Today. 
+												Available at: https://www.psychologytoday.com/gb/blog/the-compassion-chronicles/201809/stopshaming-victims-sexual-assault-not-reporting
+											<br>
+												Crang, M (2014) ‘Representation-Reality’ in Cloke, P., Crang, P., and Goodwin, M (Eds) Introducing 
+												Human Geography (3rd Edition) Routledge: London. pp. 130-143 
+											<br>
+												Crampton, J. (2014) ‘The Power of Maps’ in Cloke, P., Crang, P., and Goodwin, M (Eds) Introducing 
+												Human Geography (3rd Edition) Routledge: London. pp. 192-202
+											</p>
+										</section>
+										
+									</article>
+
+							</div>
+							<div class="col-4 col-12-medium">
+
+								<!-- Sidebar -->
+									<section class="box">
+										<a href="flood_model.html" class="image featured"><img src="images/Flood Fill.png" alt="" /></a>
+										<header>
+											<h3>Helvellyn Flood Model</h3>
+										</header>
+										<p>An algorithm that computes flood extent from a given point</p>
+										<footer>
+											<a href="flood_model.html" class="button alt">Next Project</a>
+										</footer>
+									</section>
+									<section class="box">
+										<a href="coastline_simp.html" class="image featured"><img src="images/Coastline Simplification.png" alt="" /></a>
+										<header>
+											<h3>Coastline Simplification</h3>
+										</header>
+										<p>Applying the Visvalingham-Whyatt algorithm to the UK Coastline 
+										</p>
+										<footer>
+											<a href="coastline_simp.html" class="button alt">Next Project</a>
+										</footer>
+									</section>
+									
+									<section class="box">
+										<header>
+											<h3>See Other Projects:</h3>
+										</header>
+										<ul class="divided">
+											<li><a href="dc_construction.html">DC Construction Analysis</a> </li>
+											<li><a href="train_route.html">Shortest Train Route Analysis</a> </li>
+											<li><a href="viewshed_analysis.html">Helvellyn Viewshed Analysis</a> </li>
+											<li><a href="border_algo.html">Shortest Border Algorithm</a> </li>
+											<li><a href="neighbour.html">Nearest Neighbour Analysis</a></li>
+											
+											<li><a href="data_redist.html">Geocoded Data Redistribution</a></li>	
+											<li><a href="bogota_analysis.html">Bogota District Analysis</a></li>
+											<li><a href="agent_model.html">Agent Based Modelling</a></li>
+											<li><a href="student_habits.html">Manchester Student Habits Analysis</a></li>										
+										</ul>
+									</section>
+									
+									<section class="box">
+										
+										<header>
+											<h3>Github</h3>
+										</header>
+										<p>View all of my code for all projects on my github!</p>
+										<footer>
+											<a href="https://github.com/warrena01" class="button alt">Click Here</a>
+										</footer>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+			<section id="footer">
+				<div class="container">
+					<div class="row">
+				
+						<div class="col-4 col-6-medium col-12-small">
+							<section>
+								<header>
+									<h2>Go To</h2>
+								</header>
+								<ul class="divided">
+									<li><a href="#">Back to the Top</a></li>
+									<li><a href="portfolio_homepage.html">My Portfolio</a></li>
+									
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<section>
+								<header>
+									<h2>Useful Resources</h2>
+								</header>
+								<ul class="divided">
+									<li><a href="https://www.ajg.com/gallagherre/analytics/catastrophe-analytics/">Gallagher Catastrophe Analytics</a></li>
+									<li><a href="https://www.gdacs.org/default.aspx">What's Happening Now?</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section>
+								<header>
+									<h2>Connect With Me!</h2>
+								</header>
+								<ul class="social">
+									<li><a class="icon brands fa-linkedin-in" href="https://www.linkedin.com/in/adam-warren-699397194/"><span class="label">LinkedIn</span></a></li>
+									<li><a class="icon brands fa-facebook-f" href="https://www.linkedin.com/in/adam-warren-699397194/"><span class="label">Facebook</span></a></li>
+									<li><a class="icon brands fa-instagram" href="https://www.instagram.com/adam_w4rren/"><span class="label">Facebook</span></a></li>
+								</ul>
+								
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

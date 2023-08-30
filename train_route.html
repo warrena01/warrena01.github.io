@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Adam Warren Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="right-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header">
+
+					<!-- Logo -->
+						<h1><a href="index.html">NatCat Analyst</a></h1>
+
+					<!-- Nav -->
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li class="current"><a href="portfolio_homepage.html">My Portfolio</a></li>
+							<li><a href="career_resources.html">Industry Resources</a>
+							<li><a href="technical_homepage.html">Technical Resources</a></li>
+							
+						</ul>
+					</nav>
+
+				</section>
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div class="row">
+							<div class="col-8 col-12-medium">
+
+								<!-- Content -->
+									<article class="box post">
+										<header>
+											<h2>Train Route Proposal for the Peak District </h2>
+											<p>A least cost GIS analysis as a proof of concept for its use in infrastructure planning</p>
+										</header>
+										<img src="images/portfolio pages/existing_infr.png" style="max-width: 90%"/>
+										<img src="images/portfolio pages/proposed.png" style="max-width: 90%"/>
+										<img src="images/portfolio pages/land_t.png" style="max-width: 100%"/><br><br>
+										
+										<section>
+											<header>
+												<h3>Discussion</h3>
+											</header>
+											<p>
+												GIS is perhaps most effective when used normatively; to spatially analyse data and prescribe, or improve, design (Longley et al, 2005). Least-cost paths, as used in this example, are paradigmatic of this, and were used to define the least-cost route for a new railway line from Windermere to Keswick. Least-cost analysis is particularly useful given its role in integrating and evaluating different environmental factors in a multi-criteria fashion to produce a singular output (Bangli et al, 2011). Whilst Euclidian distance between the source and destination provides the shortest possible route between the stations, it is not the overall lowest cost route. Least-cost routes are more realistic as they consider costs associated with landscape features, rather than mere distance between source and destination (Sutcliffe et al, 2003). It is this logic that least-cost route methodologies were implemented in proposing the new rail route.
+											</p>
+											<p>
+												Figure 1 evidences Keswick’s main transport infrastructure from other significant towns, with the predominant network links as the A66 and A591, with the closest rail line being located in Windermere. In response to this, a least-cost path was calculated, linking Windermere to Keswick. It was assumed lower costs were associated with lower elevations, lower quality land and greater proximity to road networks. Figure 2 shows this proposed rail route between Keswick and Windermere, which largely mimics the route of the A591 and only detours where the road network links to the neighbouring towns such as Ambleside and Rydal. Given this relationship, the route in general is plausible given land quality remains largely low cost throughout the entire lake district (see figure 4; GOV.UK, 2020). As such, it would have had lower effect in defining the route, making the proximity to roads relatively more important, hence explaining the relationship. Further, this relationship is expected given the road network would have been subject to similar multi-criteria and least-cost analysis, also considering elevation and land quality.
+											</p>
+											<p>
+												Key to defining the effect a factor has in the map output, is the weighting the factor is given. Whilst the researcher can be guided by data, the weighting, and perceived significance of each criterion directly affects the outcome, and as such the researcher becomes key to the final output (Richard and Armstrong, 2010). In this research each factor was given equal weight (0.33), which inevitably altered the final route. Whilst this may seem logical, no data was used to suggest why the factors should be weighted equally, and so it becomes arbitrary to assume each factor would affect cost equally; therefore, skewing the accuracy of the results. Further, the researcher decided to include proximity to roads as a factor over proximity to ancient woodlands. As Montermurro et al (1998) state, this research therefore became subject to personal bias towards the importance of proximity to roads, which guided criteria importance and ultimately the final outcome. Here, the researcher is shown to inherently be involved in defining the route, rather than on the landscape features.
+											</p>
+											<p>
+												Outside of the issues associated with subjective criteria weightings, by reclassifying datasets to establish preference ratings, accuracy is lost. When reclassifying datasets into preference ratings, each cell was defined between 1-10 on a scale of preference for each factor being assessed respectively. However, in using discrete values, the preference ratings can give the illusion of instantaneous changes in preference between preference ratings, when the actual cell values and real-world suitability may only change by a very small amount. For example, the elevation layer gives the impression that an increase from 97.2m to 97.3m in elevation makes working at that elevation 10% harder. In many ways, using this raster platform to create preference maps, removes the advantages of using raster layers, with continuous attribute values. Whilst reclassifying will always have this issue, increasing the scale range could have somewhat limited the loss of real-world accuracy.
+											</p>
+											<p>
+												Similarly, this methodology could have been improved with additional constraint layers. Figure 3 details how the least-cost path crosses through a lake, which in practice has huge costs, but from the inputted data it isn’t an issue. Boolean binaries could have been used here to give values of 0 for all cells in the weighted raster preference maps associated with being a lake (Shahabi et al, 2014). In addition, the least cost path shown in figure 2 continually crosses over the A591, which theoretically is the least cost route, but in practice isn’t. This shows least-cost routes as key, and advantageous, to defining accumulated costs across distance and recognising low-cost routes (Lembo et al, 2003), but equally shows how area suitability maps may sometimes be as useful. However, it is also important to remember that least cost paths are preliminary research techniques, and route design requires further analysis (Effan and Hassan, 2013), which in effect combines the need for both suitability and least cost outputs.
+											</p>
+											<p>
+												The spatial resolution was a key component, as the least cost route was defined between each cell node and used anisotropic friction layers. As with all spatial analytics, the resolution of the data is significant in defining the accuracy of the maps. This research used a resolution of 50m, which seems acceptable given small-scale landscape features aren’t a key feature of the Lake District, and the reduction in processing time (Atkinson et al, 2005). This too is evident in the OS inputs, which is at the 1: 50000 range, effectively lowering XY tolerance of landscape features; however as mentioned, landscape features are of little importance in the context of the research. Given this, the detail of the inputted data sources can also be considered as suitable for this research.
+											</p>
+											<p>
+												Overall, this methodology was suitable for the intended outcomes of the research. Whilst it could have been improved with additional friction layers, the results as per the inputs were plausible. The outputs and data sources used were suitably accurate for the context, but it is recognised more detailed reclassification of friction layers could have benefited the rigour of the research. Researcher positionality has also been explored as problematic to the route, but it is difficult to limit subjective bias in research. Whilst accuracy seemed to be low throughout the research, in general, with an understanding the map only serves to provide a general route, not a final proposed route, the research proved substantial. 
+											</p>
+											<p>
+												References:
+											</p>
+											<p>
+												Atkinson, DM, Deadman, P, Dudycha, D and Traynor, S (2005) ‘Multi Criteria evaluation and least cost path analysis for an arctic all-weather road’ in Applied Geography 25. pp 287-307 <br>
+												Bagli, S., Geneletti, D. and Orsi, F. (2011) ‘Routeing of power lines through least-cost path analysis and multicriteria evaluation to minimise environmental impacts’ in Environmental Impact Assessment Review, 31(3), pp.234-239 <br>
+												Effat, H.A. and Hassan, O.A., (2013) ‘Designing and evaluation of three alternatives highway routes using the Analytical Hierarchy Process and the least-cost path analysis, application in Sinai Peninsula, Egypt’ in The Egyptian Journal of Remote Sensing and Space Science, 16(2), pp.141-151.<br>
+												Esri (2020) ‘Using snapping effectively in ArcGIS 10’. Available at: https://www.esri.com/arcgis-blog/products/data-management/data-management/using-snapping-effectively-in-arcgis-10/ <br>
+												GOV.UK (2020) ‘Guide to Assessing Development Proposals on Agricultural Land. Available at: https://www.gov.uk/government/publications/agricultural-land-assess-proposals-for-development/guide-to-assessing-development-proposals-on-agricultural-land <br>
+												LearnGIS (2020) ‘Section Four: Discrete and Continuous Data’. Available at: https://learngis.org/textbook/section-four-discrete-and-continuous-data <br>Lembo et al (2003) ‘Computing Distance to the Nearest Utility: As the Crow Flies vs. As the Gas Flows’ in Cartography and Geographic Information Science 30 (4) pp. 335-342 <br>
+												Longley, P.A., Goodchild, M.F., Maguire, D.J. and Rhind, D.W., (2005) ‘Geographic Information Systems and Science’. John Wiley & Sons. <br>
+												Motemurro, D., Barnett, S., & Gale, T. (1998). GIS based process helps transcanada select best route for expansion line’ in Oil and Gas Journal, 96(25), pp 63–71. <br>
+												Richard, Y and Armstrong, D. P (2010) ‘Cost distance modelling of landscape connectivity and gap‐crossing ability using radio‐tracking data’ in Journal of Applied Ecology. Available at: https://doi.org/10.1111/j.1365-2664.2010.01806.x  <br>
+												Shahabi, H., Keihanfard, S., Ahmad, B.B. and Amiri, M.J.T., (2014). ‘Evaluating Boolean, AHP and WLC methods for the selection of waste landfill sites using GIS and satellite images’ in Environmental Earth Sciences, 71(9), pp.4221-4233 <br>
+												Sutcliffe et al (2003) ‘Modelling the benefits of farmland restoration: methodology and application to butterfly movement’ in Landscape and Urban Planning 63 (1) pp 15-31
+										</section>
+										
+									</article>
+
+							</div>
+							<div class="col-4 col-12-medium">
+
+								<!-- Sidebar -->
+									<section class="box">
+										<a href="viewshed_analysis.html" class="image featured"><img src="images\Viewshed Analysis.png" alt="" /></a>
+										<header>
+											<h3>Helvellyn Viewshed Analysis</h3>
+										</header>
+										<p>An algorithm that computes the viewshed from a given point</p>
+										<footer>
+											<a href="viewshed_analysis.html" class="button alt">Next Project</a>
+										</footer>
+									</section>
+									<section class="box">
+										<a href="border_algo.html" class="image featured"><img src="images/GDP Per Capita.png" alt="" /></a>
+										<header>
+											<h3>Shortest Border Algorithm</h3>
+										</header>
+										<p>An algorithm that finds the shortest shared border between two countries.</p>
+										<footer>
+											<a href="border_algo.html" class="button alt">Next Project</a>
+										</footer>
+									</section>
+									
+								
+									<section class="box">
+										<header>
+											<h3>See Other Projects:</h3>
+										</header>
+										<ul class="divided">
+											<li><a href="dc_construction.html">DC Construction Analysis</a> </li>
+											<li><a href="neighbour.html">Nearest Neighbour Analysis</a></li>
+											<li><a href="leeds_crime.html">Crime in leeds Heatmap</a></li>
+											<li><a href="flood_model.html">Helvellyn Flood Model</a></li>
+											<li><a href="coastline_simp.html">Coastline Simplification</a></li>
+											<li><a href="data_redist.html">Geocoded Data Redistribution</a></li>	
+											<li><a href="bogota_analysis.html">Bogota District Analysis</a></li>
+											<li><a href="agent_model.html">Agent Based Modelling</a></li>
+											<li><a href="student_habits.html">Manchester Student Habits Analysis</a></li>										
+										</ul>
+									</section>
+									
+									<section class="box">
+										
+										<header>
+											<h3>Github</h3>
+										</header>
+										<p>View all of my code for all projects on my github!</p>
+										<footer>
+											<a href="https://github.com/warrena01" class="button alt">Click Here</a>
+										</footer>
+									</section>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+			<section id="footer">
+				<div class="container">
+					<div class="row">
+				
+						<div class="col-4 col-6-medium col-12-small">
+							<section>
+								<header>
+									<h2>Go To</h2>
+								</header>
+								<ul class="divided">
+									<li><a href="#">Back to the Top</a></li>
+									<li><a href="portfolio_homepage.html">My Portfolio</a></li>
+									
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<section>
+								<header>
+									<h2>Useful Resources</h2>
+								</header>
+								<ul class="divided">
+									<li><a href="https://www.ajg.com/gallagherre/analytics/catastrophe-analytics/">Gallagher Catastrophe Analytics</a></li>
+									<li><a href="https://www.gdacs.org/default.aspx">What's Happening Now?</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section>
+								<header>
+									<h2>Connect With Me!</h2>
+								</header>
+								<ul class="social">
+									<li><a class="icon brands fa-linkedin-in" href="https://www.linkedin.com/in/adam-warren-699397194/"><span class="label">LinkedIn</span></a></li>
+									<li><a class="icon brands fa-facebook-f" href="https://www.linkedin.com/in/adam-warren-699397194/"><span class="label">Facebook</span></a></li>
+									<li><a class="icon brands fa-instagram" href="https://www.instagram.com/adam_w4rren/"><span class="label">Facebook</span></a></li>
+								</ul>
+								
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

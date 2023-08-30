@@ -1,0 +1,310 @@
+<!DOCTYPE HTML>
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Adam Warren Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="right-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header">
+
+					<!-- Logo -->
+						<h1><a href="index.html">NatCat Analyst</a></h1>
+
+					<!-- Nav -->
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li class="current"><a href="portfolio_homepage.html">My Portfolio</a></li>
+							<li><a href="career_resources.html">Industry Resources</a>
+							<li><a href="technical_homepage.html">Technical Resources</a></li>
+							
+						</ul>
+					</nav>
+
+				</section>
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div class="row">
+							<div class="col-8 col-12-medium">
+
+								<!-- Content -->
+									<article class="box post">
+										<header>
+											<h2>Passively Geocoded Data Redistribution</h2>
+											<p>A geospatial algorithm that redistributed Royal Wedding tweet activity data to more probable distributions</p>
+										</header>
+										<img src="images/portfolio pages/geocoded_redistribution_big_picture.png" style="max-width: 80%"/>
+										<img src="images/portfolio pages/Effects of w and s.png" style="max-width: 80%"/>
+										<img src="images/portfolio pages/explanation_map.png" style="max-width: 100%"/>
+										<img src="images/portfolio pages/explanation_map2.png" style="max-width: 100%"/>
+										
+										<section>
+											<header>
+												<h3>Discussion</h3>
+											</header>
+											<p>
+												Twitter, and social media more widely, is an ever-increasing site for volunteered geographic 
+												information. Such platforms centre around a user profile, which includes user-defined spatial 
+												locators, most commonly ‘where the user lives’. Whilst this is not a real-time locator for the 
+												user’s ever-changing location through geographic space that remains true despite such 
+												movements (Field and O’Brien, 2010), it can be used as a proxy for the location of the user 
+												content (Huck et al., 2015). However, geocoding using this data provides two interconnecting 
+												issues: (1) spatial ambiguity arises in the scalar and spatial extent to which a user defines the 
+												place they are from, which hinders upon place-based attachments and importance for varying 
+												place-identities; (2) representing place from these definitions occurs as a representive point 
+												within the administrative area attributed to this place (which is rarely the true user location 
+												within this region, or even may not be the correct region itself, given place’s subjective spatial 
+												extension). Resulting from this, is ‘false hotspots’, given the georeferenced data reduces 
+												spatially variable data to the same singular coordinate location, therefore, often 
+												misrepresenting the true area, location, or nature of the place intended by the user (Jones et 
+												al., 2008; Rahimi et al., 2003). 
+											</p>
+											<p>
+												As is evident in the data used for this project, the random 1023 sample of 
+												passively geocoded level 3 tweets are represented at a greatly reduced number of locations. 
+												As shown above, the entire tweet data set, and places to which they ‘originate’, is reduced 
+												to a series of singular points in geographic space, which are spatially ambiguous given each 
+												point at the same place is represented identically but each point refers to different, subjective 
+												arrangements and understandings of the defined place. Hence, creating a representation of 
+												numerous false hotspots. Perhaps the most pertinent example of this for this dataset, is a 
+												singular point representation for Manchester, which could have been referenced by a user at 
+												a variety of scales (e.g. Greater Manchester, Manchester borough, Manchester at a city-scale). Importantly, as Silvan et al. (2009) have spoken to, the relationship between how 
+												misleading such spatial ambiguities can be in representations is premised upon the closeness 
+												between the spatial scale at which the place was observed, and the scale at which it is 
+												represented. Meaning, false hotspots for this project (at a borough scale and represented at 
+												a Greater Manchester spatial scale) should be considered to greatly alter the map as 
+												interpretable as a true reflection of the spatial patterns. 
+											</p>
+											<p>
+												Given such problematic ‘raw’ data and its resulting representations, using weighted redistribution offers 
+												a method to redistribute points from their currently geolocated points, to new locations that are more 
+												likely to reflect the patterns in the entire dataset. This isn’t to say the redistributed output is more or less 
+												true than the original data, but that it is likely to be more representative of the actual, unknown, patterns present. 
+												Weighted redistribution does this, by individually relocating each data point to one of a set of ‘w’ random1
+												coordinates, and the new location for each point being assigned based upon the highest valued random 
+												coordinate from a weighted raster surface (that is believed to hold similar patterns to that Twitter activity 
+												would, making them comparable and useful in defining likely patterns for the Twitter data). ‘w’ is value 
+												relational to the weighted surface, given increased random points improves the likelihood of a high 
+												scoring cell, making the new pattern more likely to reflect the weighted surfaces’. Each new location is 
+												represented as a distribution around the new coordinates, so not to simply reproduce a new false 
+												hotspot, as the ‘true’ location of the data is unknown and given the projects intention to identify an area 
+												within which the data point was likely to be located, not where it actually is. This project used a 
+												population density raster layer as a comparative for Twitter activity, given the logic that represents a 
+												basic relationship between more people and more tweets. Further, considering the level-3 data targets 
+												mainly the town scale, parallels can be drawn between a town area and population dens areas. For the 
+												purposes of reflecting the main trends, this is useful, however a more detailed breakdown could have 
+												equally looked into Twitter demographics, and used a raster layer that better reflects this, such as 
+												average user age and where these age groups reside. 
+											</p>
+											<p>
+												Importantly, however, producing such a map involves a user input, and decision, upon the 
+												significance of both the weighted surface used to decipher the likelihood of where the new 
+												location would be, and the spatial ambiguity of the distribution drawn around the new location’s 
+												coordinates. Huck et al (2015, pg. 58) attests that “as with many GIS algorithms, specific user 
+												input variables can rarely be fully justified”. Therefore, whilst the values used were chosen 
+												based upon an exploration of the impact of adjustments to the concerned variables, the map output must be considered in relation to this subjectivity. The weighted raster 
+												influence was chosen so not to fully assimilate to the raster pattern – given the data is used 
+												for its similar and somewhat comparable but not replicative status – whilst being weighted 
+												enough so meaningful patterns at suitable spatial scales are established. Similarly, the degree 
+												of spatial ambiguity was chosen to balance between highlighting likely (and of suitable scale 
+												given the advertising focus for this data) hotspots for activity, but not to over-compensate for 
+												this, producing secondary false hotspots, or elucidating hotspots at too large a scale so that 
+												they become somewhat meaningless. As such, the redistributed patterns can be interpreted as producing a 
+												meaningful pattern of likely locations of Twitter activity regarding the Royal Wedding, and 
+												where advertising should therefore target. This is in terms of both the pattern established, and 
+												the geographic accuracy of such patterns, given the use of British National Grid projections 
+												that result in low distortions to spatial features. 
+											</p>
+											<p>
+												Indeed, perhaps the most beneficial element of this methodology, is its aim to establish likely 
+												patterns rather than individual instances of accuracy. As such, even whilst the data may be 
+												inherently messy, and its redistribution, subjective in operation, in general, it reorganizes a 
+												somewhat useless dataset, into an array of meaningful patterns, which given the volume of 
+												the data, masks many of the smaller scale inaccuracies that arise from the data ambiguities. Indeed, perhaps the most beneficial element of this methodology, is its aim to establish likely 
+												patterns rather than individual instances of accuracy. As such, even whilst the data may be 
+												inherently messy, and its redistribution, subjective in operation, in general, it reorganizes a 
+												somewhat useless dataset, into an array of meaningful patterns, which given the volume of 
+												the data, masks many of the smaller scale inaccuracies that arise from the data ambiguities. 
+											</p>
+											<p>
+												References:
+											</p>
+											<p>
+												Field, K and O’Brien, J. (2010) ‘Cartoblography: Experiments in Using and Organising the 
+												Spatial Context of Micro-Blogging’ in Transactions in GIS 14. pp. 5-23 <br>
+												Huck, J., Whyatt, D., and Coulton, P. (2015) ‘Visualising Patterns in Spatially Ambiguous 
+												Point Data’ in Journal of Spatial Information Science (10). pp. 47-66 <br>
+												Jones, C.B., Purves, R.S., Clough, P.D., and Joho, H. (2008) ‘Modelling Vague Places ith 
+												Knowledge from the Web’ in International Journal of Geographical Information Science 22 
+												(10). pp. 1045-1065. <br>
+												Rahimi, S., Yang, H., Cobb, M., Zhou, H., Ali, D., and Petry, F.E. (2003) ‘An Inexact Inferencing 
+												Strategy for Spatial Objects with Determined and Indeterminate Boundaries’ in Proc. 12th 
+												IEEE International Conference on Fuzzy Systems 2. pp. 778-783 <br>
+												Silvan-Cardenas, J.L, Wang, L., and Zhan, F. (2009) ‘Representing Geographical Objects with 
+												Scale-Induced Indeterminate Boundaries: A Neural Network-Based Data Model’ in 
+												International Journal of Geographical Information Science 23 (3). pp. 295-318. <br>
+											</p>
+										</section>
+										<section>
+											<header>
+												<h3>Pseudo Code</h3>
+											</header>
+											<img src="images/portfolio pages/pseudocode/Screenshot 2023-08-27 155147.png" style="max-width: 100%" />
+											<header>
+												<h3>Map 1</h3>
+											</header>
+											<p>
+											<img src="images/Code/9/Screenshot 2023-08-26 200608.png" style="max-width: 100%"/>
+											<img src="images/Code/9/Screenshot 2023-08-26 200621.png" style="max-width: 100%"/>
+											<img src="images/Code/9/Screenshot 2023-08-26 200636.png" style="max-width: 100%"/>
+											<img src="images/Code/9/Screenshot 2023-08-26 200802.png" style="max-width: 100%"/>
+											<img src="images/Code/9/Screenshot 2023-08-26 200817.png" style="max-width: 100%"/>
+											<img src="images/Code/9/Screenshot 2023-08-26 200827.png" style="max-width: 100%"/>
+											</p>
+											<header>
+												<h3>Map 2</h3>
+											</header>
+											<p>
+											<img src="images/Code/9/1/Screenshot 2023-08-26 200214.png" style="max-width: 100%"/>
+											<img src="images/Code/9/1/Screenshot 2023-08-26 200228.png" style="max-width: 100%"/>
+											<img src="images/Code/9/1/Screenshot 2023-08-26 200333.png" style="max-width: 100%"/>
+											<img src="images/Code/9/1/Screenshot 2023-08-26 200349.png" style="max-width: 100%"/>
+											<img src="images/Code/9/1/Screenshot 2023-08-26 200409.png" style="max-width: 100%"/>
+											<img src="images/Code/9/1/Screenshot 2023-08-26 200419.png" style="max-width: 100%"/>
+											<img src="images/Code/9/1/Screenshot 2023-08-26 200444.png" style="max-width: 100%"/>
+											</p>
+										
+										</section>
+									</article>
+
+							</div>
+							<div class="col-4 col-12-medium">
+
+								<!-- Sidebar -->
+								<section class="box">
+									<a href="bogota_analysis.html" class="image featured"><img src="images\bogota_analysis.png" alt="" /></a>
+									<header>
+										<h3>Bogota District Analysis</h3>
+									</header>
+									<p>A geospatial analysis of the varying size of barrios in the capital of Colombia
+
+									</p>
+									<footer>
+										<a href="bogota_analysis.html" class="button alt">Next Project</a>
+									</footer>
+								</section>
+									<section class="box">
+										<a href="agent_model.html" class="image featured"><img src="images/Agent Based Modellingfjmf.png" alt="" /></a>
+										<header>
+											<h3>Agent Based Modelling</h3>
+										</header>
+										<p>A project that recreates Schelling's model of segregation</p>
+										<footer>
+											<a href="agent_model.html" class="button alt">Next Project</a>
+										</footer>
+									</section>
+									
+									<section class="box">
+										<header>
+											<h3>See Other Projects:</h3>
+										</header>
+										<ul class="divided">
+											<li><a href="dc_construction.html">DC Construction Analysis</a> </li>
+											<li><a href="train_route.html">Shortest Train Route Analysis</a> </li>
+											<li><a href="viewshed_analysis.html">Helvellyn Viewshed Analysis</a> </li>
+											<li><a href="border_algo.html">Shortest Border Algorithm</a> </li>
+											<li><a href="neighbour.html">Nearest Neighbour Analysis</a></li>
+											<li><a href="leeds_crime.html">Crime in leeds Heatmap</a></li>
+											<li><a href="flood_model.html">Helvellyn Flood Model</a></li>
+											<li><a href="coastline_simp.html">Coastline Simplification</a></li>
+											
+											<li><a href="student_habits.html">Manchester Student Habits Analysis</a></li>										
+										</ul>
+									</section>
+									
+									<section class="box">
+										
+										<header>
+											<h3>Github</h3>
+										</header>
+										<p>View all of my code for all projects on my github!</p>
+										<footer>
+											<a href="https://github.com/warrena01" class="button alt">Click Here</a>
+										</footer>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+			<section id="footer">
+				<div class="container">
+					<div class="row">
+				
+						<div class="col-4 col-6-medium col-12-small">
+							<section>
+								<header>
+									<h2>Go To</h2>
+								</header>
+								<ul class="divided">
+									<li><a href="#">Back to the Top</a></li>
+									<li><a href="portfolio_homepage.html">My Portfolio</a></li>
+									
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<section>
+								<header>
+									<h2>Useful Resources</h2>
+								</header>
+								<ul class="divided">
+									<li><a href="https://www.ajg.com/gallagherre/analytics/catastrophe-analytics/">Gallagher Catastrophe Analytics</a></li>
+									<li><a href="https://www.gdacs.org/default.aspx">What's Happening Now?</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section>
+								<header>
+									<h2>Connect With Me!</h2>
+								</header>
+								<ul class="social">
+									<li><a class="icon brands fa-linkedin-in" href="https://www.linkedin.com/in/adam-warren-699397194/"><span class="label">LinkedIn</span></a></li>
+									<li><a class="icon brands fa-facebook-f" href="https://www.linkedin.com/in/adam-warren-699397194/"><span class="label">Facebook</span></a></li>
+									<li><a class="icon brands fa-instagram" href="https://www.instagram.com/adam_w4rren/"><span class="label">Facebook</span></a></li>
+								</ul>
+								
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

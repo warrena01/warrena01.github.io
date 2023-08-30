@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Adam Warren Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="right-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header">
+
+					<!-- Logo -->
+						<h1><a href="index.html">NatCat Analyst</a></h1>
+
+					<!-- Nav -->
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li class="current"><a href="portfolio_homepage.html">My Portfolio</a></li>
+							<li><a href="career_resources.html">Industry Resources</a>
+							<li><a href="technical_homepage.html">Technical Resources</a></li>
+							
+						</ul>
+					</nav>
+
+				</section>
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div class="row">
+							<div class="col-8 col-12-medium">
+
+								<!-- Content -->
+									<article class="box post">
+										<header>
+											<h2>Assessing Student Behaviour in Manchester</h2>
+											<p>A geospatial analysis of student activity in Manchester</p>
+										</header>
+										<h3>
+											Introduction
+										</h3>
+										<p></p>
+										<p>
+											In understanding student’s mobility and integration within Manchester, spatio-temporal characteristics become key elements in representing student activity behaviours. Following this, analysing data with particular focus to space and time results in the means of representation being inherently geographical.  Tober’s first law states geographic data will never have an entirely random distribution, and it is with this knowledge that recognising the patterns within student behaviour data becomes ever more important (Albrechts, 2007). Therefore, when analysing the concept of mobility and student activity dispersion, Geographic Information Systems (GIS) are the most suitable medium to represent the data. This type of data visualisation relies upon absolute representation, whereby data is attributed and represented by a fixed location and time (point data), giving greater meaning and utility to the dataset (Raper and Livingstone, 1995). By using GIS software, the data is given greater significance and value through spatio-temporal representation, which eases spatial data analysis in recognising geographic spatial patterns and relationships. Without GIS, much of these geographic patterns would remain hidden within the ‘raw’ data (Longley et al., 2005). 
+											Therefore, with aim to analyse the spatial and temporal elements of student’s behaviour, and in doing so, the effectiveness of GIS as a data analysing tool, four research questions have been identified. To analyse this with scalar focus variability, these questions change emphasis on temporal and scalar elements; with the individual scale focusing on participant ‘AliG’.
+										</p>
+										<p>
+											1.	What is the geographic centre of AliG’s activities? <br>
+											2.	How dispersed are AliG’s activities? <br>
+											3.	How far is AliG’s activities typical of the rest of the students in the class? <br>
+											4.	How has the housing distribution in Manchester changed from 2012 to 2020?
+										</p>
+										<p>
+											As the cartographer, responsibility is held in transforming the data into an accurate map, which most easily conveys the relationships and trends (Obermeyer and Pinto, 2008). This involves the emphasis of certain features, and as the cartographer, to ensure these present ‘maps as truths’ (Crampton, 2014).
+										</p>
+										<h3>
+											Methodology
+										</h3>
+										<p></p>
+										<p>Data Collection<br>
+										Participants were involved in recording their geographic coordinates and activity (given a key work reference) at the times of 9am, 12pm, 3pm, 6pm, 9pm, 12am from Friday 14th March 2020, to Sunday, 16th March 2020. Pas (1988) suggests extending data collection periods over 1 day is beneficial for study rigour. However, the number of participants in this study removes the degree to which the wider student population is represented as each participant carries great weight in the results. The participants recorded their locations using grid references, postcode and GPS data, according to the British National Grid. Whilst postcodes find locations at lower resolutions, the relative scale of analysis largely removes any inaccuracies which may occur (Longley et al, 2015). Further, with the data collection relying on participants entering the data, user inputting errors, or untruthful entries, may result in misrepresentations or inaccuracies in the map outputs. For research question 4, bi-annual secondary data from secondary data was used. </p>
+										<p>Data Processing<br>
+										Having recognised GISs role in space-time attribute representations, ArcGISPro was used to geo-analyse the data points. ArcGISPro will be used inductively to search for patterns and trends in the vector data which will interpolate student behaviour patterns. Given the data collection period only extended over one weekend, data cannot be argued to be anomalous as there isn’t multiple ‘weekends’ to compare to, and therefore, for some comparisons, the scalar focus is limited so direct comparisons can be made.</p>
+										<p>Mean<br>
+										A key element in analysing the spatial movements of participant’s activities is the ability to summarise data. By finding a geographic centre, the dataset can be reflected by a single point; produced by averaging the x and y coordinates respectively and creating a new output point (Mitchell, 2005). Whilst the mean is subject to being pulled towards outliers or extreme values (Burt and Barber, 1996), our study can only define datapoints as untypical for that weekend, and thus is a suitable measure of central tendency will be used to represent the dataset. Given all data is of equal significance in the dataset, weighted means weren’t used as it would skew the results. This will explicitly be used in finding the geographic centre. Given this study’s dataset doesn’t provide scope for recognising what behaviours would be outlying, and only indicates popular behaviours, this study cannot definitively say there is or isn’t normality in activities beyond Manchester. Therefore, in question 3, as the extreme values skew the mean on a Manchester scalar focus, a new mean for datapoints just in GMLAs will be defined to enable direct comparisons with AliG. The geographic centre will also be used in question 4, by mapping the changes in distribution by marking the changes in the geographic centres from 2012-2020. </p>
+										<p>Directional Distribution<br>
+										Geographic centres suggest the level of clustering in a dataset through gaining understanding of the volume of significant neighbours in a circle around mean (with a radius of one standard deviation). Normally distributed data would have 68% of the data populations within this area and thus levels higher or lower than this would detail clustering or dispersion of data respectively. Standard distance only represents clustering in a circular area around the mean and doesn’t account for non-symetrical clustering, e.g. linear clustering (Chew, 1966). Therefore, this study will use directional distributions, which calculates the standard distance in the x- and y- planes separately (esri, 2020a), creating an ellipse shaped standard deviational area by giving weight in standard distance to the direction with greater data spread. This then represents a truer description of the clustering and gives evidence to the orientation and direction of the activities performed by the participants; or at least clues as to what influences the spatial patterns (Albrechts, 2007). Therefore, as questions 2, 3, and 4 concern clustering and the direction of data points, it will be used as it offers a more appropriate measure of dispersion than the range (Longley et al, 2005). </p>
+										<p>Density Based Clustering<br>
+										This tool allows smaller scale, clusters to be identified based upon their proximity to other data points (esri, 2020b). Given in question 2 there was under 30 datapoints, this methodology was chosen in preference to optimised hotspot analysis. Minimum features per cluster was defined as 2 and whilst this is low considering ALiG had 18 datapoints, it is logical the university campus was created to be clustered, rather than noise. Further, as the data was collected over the weekend, to create the university campus as noise wouldn’t be representative of normal student behaviour. This is my cartographic decision, but it could be viewed as misrepresenting the clustering of the dataset. This will be used in question 3, contrasted against the class’ hotspots, to see which clusters of AliG are typical.</p>
+										<p>Data Queries<br>
+										This geoprocessing tool will be used to refine data layers across attributes and space. This tool was used in question 3 to define points only within GMLA (to allow direct comparison of AliG and the class), and in question 4 to refine the data so only those with housing attributes were chosen and used in the representation.</p>
+										<p>Average Nearest Neighbour<br>
+										Average nearest neighbour outputs allow descriptive statistics to accompany the multidimensional features of spatial data (Albrechts, 2007). With this calculation, Euclidian distance was used rather than Manhattan distance as wayfinding is not an important aspect when comparing locations within this study. These descriptive statistics were used to aid questions 3 and 4. Whilst useful, it can be argued the limited datapoints in AliG’s data for question 2 and 3 remove precision in this analysis.</p>
+										<p>Optimised Hotspot Analysis<br>
+										This methodology was chosen in preference to multivariate clustering as the clustering should be identified across space, not confined to clustering in arbitrary boundaries. This methodology recognises statistically significant clusters, and thus by recognising these areas they can be compared to, AliG values which lie in these areas can be classified as typical (question 3) (esri, 2020c).</p>
+										<img src="images/portfolio pages/student_habit/Screenshot 2023-08-27 144108.png" style="max-width: 100%"/>
+										<img src="images/portfolio pages/student_habit/Screenshot 2023-08-27 144126.png" style="max-width: 100%"/>
+										<img src="images/portfolio pages/student_habit/Screenshot 2023-08-27 144141.png" style="max-width: 100%"/>
+										<img src="images/portfolio pages/student_habit/Screenshot 2023-08-27 144200.png" style="max-width: 100%"/>
+										<img src="images/portfolio pages/student_habit/Screenshot 2023-08-27 144208.png" style="max-width: 100%"/>
+										<img src="images/portfolio pages/student_habit/Screenshot 2023-08-27 144217.png" style="max-width: 100%"/>
+										<img src="images/portfolio pages/student_habit/Screenshot 2023-08-27 144226.png" style="max-width: 100%"/>
+										<img src="images/portfolio pages/student_habit/Screenshot 2023-08-27 144237.png" style="max-width: 100%"/>
+										
+										<section>
+											<header>
+												<h3>Discussion</h3>
+											</header>
+											<p>
+												Research Question 1 <br>
+												AliG’s activities result in a geographic centre on Ashtene Road, Withington. The two data points AliG2 and AliG3 will have pulled the mean centre in a northward direction. Whereas, the datapoints in East Didsbury and AliG’s home would have held great weight in positioning the geographic centre, given the volume of data these locations have. 
+											</p>
+											<p>
+												Research Question 2 <br>
+												Figure 3 shows the directional distributions outputted ellipse has longitudinal weight, with the data points representing greater spread in a northerly direction. 78% of data points are within one standard deviation of the mean, highlighting the data as non-normally distributed, and thus recognising clustering around the mean. This is further evidenced with the average nearest neighbour results. The outputted Z value, shown in table 1 as -3.26 shows high levels of clustering with 0.99 significance. Figure 2 shows a more localised recognition for the clustering, with 3 distinct clustering zones and no outliers to this trend being recognised. The data enables these to be recognised as first order clusters, with the greatest intensity of clustering found in cluster 2, with 10 data points. This figure shows the clustered areas to be centralised to university campus, Fallowfield, and Didsbury. 
+											</p>
+											<p>
+												Research Question 3 <br>
+												Figure 4 highlights the spread of data from the class (2020), but also emphasises Manchester as the main location. The geographic centre of the class’ data is evidently pulled south eastwards through the data populations in Leicester, Nottingham and Birmingham. However, when the geographic centre of AliG, and the class (within GMLAs) are compared, as shown in figure 5, the results show AliG as largely typical. Whilst the geographic centre of AliG is located more south, it is evident this is due to the large volume of data points for AliG in Didsbury. Further, with greater data points for the class being located north of the university campus (ALiG’s most northerly point), the geographic centre of the class, within GMLAs, is pulled in a north direction. This is confirmed by figure 6, where AliGs clustering in Didsbury is shown to be in a non-significant area of the class’ data. Therefore, AliG is very typical in behaviour to the class, with exception to the clustering in east Didsbury. One difference between AliG and the class, is that data is spread greater in easterly and westerly directions, as shown in figure 5’s directional distribution for class (2020) within GMLA. However, this figure also shows the same emphasis on longitudinal spread of data points. While AliG’s directional distribution ellipse is smaller, the extent to which AliG can be considered less typical through lower clustering is limited. This is as the class dataset is made of individual data sets, which gives greater spread given people have distinctive behaviours which may be opposing, and thus lead to data with greater spread. Given this, it can still be argued AliG is typical in the sense all datapoints fit within one standard deviation of the class’ dataset. Table 1 shows AliG as typical in the sense it is clustered, but not to the same degree (the class’ clustering is almost 10x denser than AliG’s).
+											</p>
+											<p>
+												Research Question 4 <br>
+												Figure 7 identifies a spatial trend in housing within Manchester, with successive averaged data points from 2012-2018 moving in a southerly direction down the oxford corridor. 2020 however, provides the first data point which opposes this trend, with the housing distribution being centred further towards Levenshulme, away from the oxford road corridor. This represents a shift in housing distribution and also weight being held in west Fallowfield 2020 datapoints given the directional distribution of 2020 data aligning with that of the previously established trend. Opposingly, the reduction in clustering (2020) shown in figure 8 simply proposes the distribution was entirely different from the trend. The centring of housing identified in question 2 and 3 to be inferred as second order effects given the longitudinal spread is centred upon the oxford road corridor. 
+											</p>
+											<p>
+												Conclusion <br>
+												Overall, student behaviour has been demonstrated to be clustered between the city centre and Didsbury with greater mobility in this longitudinal plane, with the suggestion of second order effects due the utility of housing along oxford road corridor. Further study would benefit from methodologies which enabled identification of anomalous behaviours, and data collection which included more second order effect attributes. The representation of attribute values and data across space and time has demonstrated the utility in GIS systems in translating data into meaningful maps. This gave GIS recognition for having use in further study in this domain, such as assessing the extent to which housing distribution has changed in response to house prices, but more widely, how it could be useful in natural disaster response (Van Westen, 2002).
+											</p>
+											<p>References</p>
+											<p>
+												Albrecht, J (2007) ‘Key Concept & Techniques in GIS’ Sage: London<br>
+												Burt, J. E., and G. Barber. (1996) ‘Elementary Statistics for Geographers’. Guilford, New York.<br>
+												Chew, V (1966) ‘Confidence, Prediction, and Tolerance Regions for the Multivariate Normal Distribution’ in Journal of the American Statistical Association 61.315. pp. 605-617.<br>
+												Crampton, J. (2014) ‘The Power of Maps’ in Cloke, P., Crang, P., and Goodwin, M (Eds) Introducing Human Geography (3rd Edition) Routledge: London. pp. 192-202<br>
+												Esri (2020a) ArcGISPro. ‘How Directional Distribution Works’. Available at: https://pro.arcgis.com/en/pro-app/tool-reference/spatial-statistics/h-how-directional-distribution-standard-deviationa.htm<br>
+												Esri (2020b) ArcGISPro. ‘How Density Based Clustering Works’. Available at: https://pro.arcgis.com/en/pro-app/tool-reference/spatial-statistics/how-density-based-clustering-works.htm<br>
+												Esri (2020c) ArcGISPro. ‘How Optimised Hotspot Analysis Works’. Available at: https://pro.arcgis.com/en/pro-app/tool-reference/spatial-statistics/how-optimized-hot-spot-analysis-works.htm<br>
+												Longley, P.A., Goodchild, M.F., Maguire, D.J. and Rhind, D.W., (2005) ‘Geographic Information Systems and Science’. John Wiley & Sons.<br>
+												Longley, P.A., Goodchild, M.F., Maguire, D.J. and Rhind, D.W., (2015) ‘Geographic Information Science and Systems’. John Wiley & Sons.<br>
+												Mitchell, A (2005) ‘The ESRI Guide to GIS Analysis, Volume 2’ ESRI Press<br>
+												Obermeyer, N.J. and Pinto, J.K., (2008) ‘Managing Geographic Systems’. New York, NY: The.<br>
+												Pas, E.I. (1988) ‘Weekly Travel-Activity Behaviour’ in Transportation Research Part A 15. pp. 89-109<br>
+												Raper, J., and Livingstone, D. (1995) ‘Development of a Geomorphological Spatial Model Using Object-Oriented Design’ in International Journal of Geographical Information Systems 9 (4) pp. 359–83.<br>
+												Van Westen, C.J., (2002.) ‘Remote Sensing and Geographic Information Systems for Natural Disaster Management’ in Environmental Modelling with GIS and Remote Sensing. London: Taylor & Francis. pp. 200-226<br>
+											</p>
+											
+										</section>
+										
+									</article>
+
+							</div>
+							<div class="col-4 col-12-medium">
+
+								<!-- Sidebar -->
+								<section class="box">
+									<a href="dc_construction.html" class="image featured"><img src="images/Washington_Chloropleth.png" alt="" /></a>
+									<header>
+										<h3>DC Construction Analysis</h3>
+									</header>
+									<p>A geospatial analysis of the changes in construction permit acceptance 
+									</p>
+									<footer>
+										<a href="dc_construction.html" class="button alt">Next Project</a>
+									</footer>
+								</section>
+								<section class="box">
+									<a href="train_route.html" class="image featured"><img src="images\train route.png" alt="" /></a>
+									<header>
+										<h3>Shortest Train Route Analysis</h3>
+									</header>
+									<p>A least cost GIS analysis as a proof of concept for its use in infrastructure planning
+									</p>
+									<footer>
+										<a href="train_route.html" class="button alt">Next Project</a>
+									</footer>
+								</section>
+									
+									<section class="box">
+										<header>
+											<h3>See Other Projects:</h3>
+										</header>
+										<ul class="divided">
+											
+											<li><a href="viewshed_analysis.html">Helvellyn Viewshed Analysis</a> </li>
+											<li><a href="border_algo.html">Shortest Border Algorithm</a> </li>
+											<li><a href="neighbour.html">Nearest Neighbour Analysis</a></li>
+											<li><a href="leeds_crime.html">Crime in leeds Heatmap</a></li>
+											<li><a href="flood_model.html">Helvellyn Flood Model</a></li>
+											<li><a href="coastline_simp.html">Coastline Simplification</a></li>
+											<li><a href="data_redist.html">Geocoded Data Redistribution</a></li>	
+											<li><a href="bogota_analysis.html">Bogota District Analysis</a></li>
+											<li><a href="agent_model.html">Agent Based Modelling</a></li>
+																				
+										</ul>
+									</section>
+									
+									<section class="box">
+										
+										<header>
+											<h3>Github</h3>
+										</header>
+										<p>View all of my code for all projects on my github!</p>
+										<footer>
+											<a href="https://github.com/warrena01" class="button alt">Click Here</a>
+										</footer>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+			<section id="footer">
+				<div class="container">
+					<div class="row">
+				
+						<div class="col-4 col-6-medium col-12-small">
+							<section>
+								<header>
+									<h2>Go To</h2>
+								</header>
+								<ul class="divided">
+									<li><a href="#">Back to the Top</a></li>
+									<li><a href="portfolio_homepage.html">My Portfolio</a></li>
+									
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<section>
+								<header>
+									<h2>Useful Resources</h2>
+								</header>
+								<ul class="divided">
+									<li><a href="https://www.ajg.com/gallagherre/analytics/catastrophe-analytics/">Gallagher Catastrophe Analytics</a></li>
+									<li><a href="https://www.gdacs.org/default.aspx">What's Happening Now?</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section>
+								<header>
+									<h2>Connect With Me!</h2>
+								</header>
+								<ul class="social">
+									<li><a class="icon brands fa-linkedin-in" href="https://www.linkedin.com/in/adam-warren-699397194/"><span class="label">LinkedIn</span></a></li>
+									<li><a class="icon brands fa-facebook-f" href="https://www.linkedin.com/in/adam-warren-699397194/"><span class="label">Facebook</span></a></li>
+									<li><a class="icon brands fa-instagram" href="https://www.instagram.com/adam_w4rren/"><span class="label">Facebook</span></a></li>
+								</ul>
+								
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
